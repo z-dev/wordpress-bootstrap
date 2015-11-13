@@ -68,16 +68,15 @@ a.comment-reply-link{
 	position: absolute;
 	right: 0;
 	bottom: 0;
-
-	.btn;
-	.btn-sm;
-	.btn-success;
+	@extend .btn;
+	@extend .btn-sm;
+	@extend .btn-success;
 }
 
 #cancel-comment-reply-link{
-	.btn;
-	.btn-xs;
-	.btn-warning;
+	@extend .btn;
+	@extend .btn-xs;
+	@extend .btn-warning;
 	margin-left: 1em;
 }
 
@@ -95,11 +94,11 @@ a.comment-reply-link{
 .comment-form-email,
 .comment-form-url,
 .comment-form-comment{
-	.form-group;
+	@extend .form-group;
 
 	input,
 	textarea{
-		.form-control;
+		@extend .form-control;
 	}
 
 	textarea{
@@ -115,8 +114,8 @@ a.comment-reply-link{
 
 .form-submit{
 	input[type='submit']{
-		.btn;
-		.btn-primary;
+		@extend .btn;
+		@extend .btn-primary;
 	}
 }
 
@@ -133,7 +132,7 @@ img.avatar{
 	border-bottom: 1px solid #dedede;
 	border-right: 1px solid #dedede;
 	border-left: 1px solid #ddd;
-	
+
 }
 
 ol.commentlist li{

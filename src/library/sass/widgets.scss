@@ -22,8 +22,8 @@ WP-Bootstrap - Widgets
 
 .tags{
 	a{
-		.label;
-		.label-default;
+		@extend .label;
+		@extend .label-default;
 	}
 }
 
