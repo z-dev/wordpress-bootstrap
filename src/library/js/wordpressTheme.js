@@ -1,4 +1,4 @@
-
+let jQuery = require('jquery')
 
 
 /* imgsizer (flexible images for fluid sites) */
