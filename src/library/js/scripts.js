@@ -7,25 +7,25 @@ func();}}}}
 
 // add twitter bootstrap classes and color based on how many times tag is used
 function addTwitterBSClass(thisObj) {
-  var title = $(thisObj).attr('title');
+  var title = jQuery(thisObj).attr('title');
   if (title) {
     var titles = title.split(' ');
     if (titles[0]) {
       var num = parseInt(titles[0]);
       if (num > 0)
-      	$(thisObj).addClass('label');
+      	jQuery(thisObj).addClass('label label-default');
       if (num == 2)
-        $(thisObj).addClass('label label-info');
+        jQuery(thisObj).addClass('label label-info');
       if (num > 2 && num < 4)
-        $(thisObj).addClass('label label-success');
+        jQuery(thisObj).addClass('label label-success');
       if (num >= 5 && num < 10)
-        $(thisObj).addClass('label label-warning');
+        jQuery(thisObj).addClass('label label-warning');
       if (num >=10)
-        $(thisObj).addClass('label label-important');
+        jQuery(thisObj).addClass('label label-important');
     }
   }
   else
-  	$(thisObj).addClass('label');
+  	jQuery(thisObj).addClass('label');
   return true;
 }
 
@@ -53,26 +53,11 @@ jQuery(document).ready(function($) {
 		return true;
 	});
 	
-	$('article.post').hover(function(){
-		$('a.edit-post').show();
-	},function(){
-		$('a.edit-post').hide();
-	});
-	
-	// Input placeholder text fix for IE
-	$('[placeholder]').focus(function() {
-	  var input = $(this);
-	  if (input.val() == input.attr('placeholder')) {
-		input.val('');
-		input.removeClass('placeholder');
-	  }
-	}).blur(function() {
-	  var input = $(this);
-	  if (input.val() == '' || input.val() == input.attr('placeholder')) {
-		input.addClass('placeholder');
-		input.val(input.attr('placeholder'));
-	  }
-	}).blur();
+	// $('article.post').hover(function(){
+	// 	$('a.edit-post').show();
+	// },function(){
+	// 	$('a.edit-post').hide();
+	// });
 	
 	// Prevent submission of empty form
 	$('[placeholder]').parents('form').submit(function() {
@@ -83,21 +68,9 @@ jQuery(document).ready(function($) {
 		}
 	  })
 	});
-	
-	$('#s').focus(function(){
-		if( $(window).width() < 940 ){
-			$(this).animate({ width: '200px' });
-		}
-	});
-	
-	$('#s').blur(function(){
-		if( $(window).width() < 940 ){
-			$(this).animate({ width: '100px' });
-		}
-	});
 			
 	$('.alert-message').alert();
 	
 	$('.dropdown-toggle').dropdown();
  
-}); /* end of as page load scripts */
+});

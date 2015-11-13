@@ -6,11 +6,11 @@ Template Name: Left Sidebar Page
 
 <?php get_header(); ?>
 			
-			<div id="content" class="clearfix row-fluid">
+			<div id="content" class="clearfix row">
             
             	<?php get_sidebar(); // sidebar 1 ?>
 			
-				<div id="main" class="span8 clearfix" role="main">
+				<div id="main" class="col col-lg-8 clearfix" role="main">
 
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					
@@ -29,7 +29,7 @@ Template Name: Left Sidebar Page
 						
 						<footer>
 			
-							<p class="clearfix"><?php the_tags('<span class="tags">' . __("Tags","bonestheme") . ': ', ', ', '</span>'); ?></p>
+							<p class="clearfix"><?php the_tags('<span class="tags">' . __("Tags","wpbootstrap") . ': ', ', ', '</span>'); ?></p>
 							
 						</footer> <!-- end article footer -->
 					
@@ -43,10 +43,10 @@ Template Name: Left Sidebar Page
 					
 					<article id="post-not-found">
 					    <header>
-					    	<h1><?php _e("Not Found", "bonestheme"); ?></h1>
+					    	<h1><?php _e("Not Found", "wpbootstrap"); ?></h1>
 					    </header>
 					    <section class="post_content">
-					    	<p><?php _e("Sorry, but the requested resource was not found on this site.", "bonestheme"); ?></p>
+					    	<p><?php _e("Sorry, but the requested resource was not found on this site.", "wpbootstrap"); ?></p>
 					    </section>
 					    <footer>
 					    </footer>

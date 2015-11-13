@@ -1,4 +1,4 @@
-				<div id="sidebar2" class="fluid-sidebar sidebar span4" role="complementary">
+				<div id="sidebar2" class="col-sm-4" role="complementary">
 				
 					<?php if ( is_active_sidebar( 'sidebar2' ) ) : ?>
 
@@ -10,7 +10,7 @@
 						
 						<div class="alert alert-message">
 						
-							<p><?php _e("Please activate some Widgets","bonestheme"); ?>.</p>
+							<p><?php _e("Please activate some Widgets","wpbootstrap"); ?>.</p>
 						
 						</div>
 

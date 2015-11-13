@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 			
-			<div id="content" class="clearfix row-fluid">
+			<div id="content" class="clearfix row">
 			
-				<div id="main" class="span8 clearfix" role="main">
+				<div id="main" class="col col-lg-8 clearfix" role="main">
 
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					
@@ -12,7 +12,7 @@
 							
 							<div class="page-header"><h1 class="single-title" itemprop="headline"><?php the_title(); ?></h1></div>
 							
-							<p class="meta"><?php _e("Posted", "bonestheme"); ?> <time datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_date(); ?></time> <?php _e("by", "bonestheme"); ?> <?php the_author_posts_link(); ?> <span class="amp">&</span> <?php _e("filed under", "bonestheme"); ?> <?php the_category(', '); ?>.</p>
+							<p class="meta"><?php _e("Posted", "wpbootstrap"); ?> <time datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_time(); ?></time> <?php _e("by", "wpbootstrap"); ?> <?php the_author_posts_link(); ?> <span class="amp">&</span> <?php _e("filed under", "wpbootstrap"); ?> <?php the_category(', '); ?>.</p>
 						
 						</header> <!-- end article header -->
 					
@@ -24,7 +24,7 @@
 						
 						<footer>
 			
-							<?php the_tags('<p class="tags"><span class="tags-title">' . __("Tags","bonestheme") . ':</span> ', ' ', '</p>'); ?>
+							<?php the_tags('<p class="tags"><span class="tags-title">' . __("Tags","wpbootstrap") . ':</span> ', ' ', '</p>'); ?>
 							
 						</footer> <!-- end article footer -->
 					
@@ -38,10 +38,10 @@
 					
 					<article id="post-not-found">
 					    <header>
-					    	<h1><?php _e("Not Found","bonestheme"); ?></h1>
+					    	<h1><?php _e("Not Found","wpbootstrap"); ?></h1>
 					    </header>
 					    <section class="post_content">
-					    	<p><?php _e("Sorry, but the requested resource was not found on this site.","bonestheme"); ?></p>
+					    	<p><?php _e("Sorry, but the requested resource was not found on this site.","wpbootstrap"); ?></p>
 					    </section>
 					    <footer>
 					    </footer>
