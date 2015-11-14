@@ -2,6 +2,8 @@
 
 A simple (modern) wordpress theme. Built with webpack and the latest bootstrap.
 
+Based heavily from: https://github.com/320press/wordpress-bootstrap
+
 ## Running
 
 ###Prerequisites
