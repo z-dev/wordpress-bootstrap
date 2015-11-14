@@ -28,3 +28,7 @@ Open a new terminal you can:
 ### Activating the Theme
 
 Go to admin pages -> Appearance -> Themes -> wp-boostrap -> activate
+
+## Deploying
+
+Use the [wppusher](https://wppusher.com/) tool, to push to git to deploy.
