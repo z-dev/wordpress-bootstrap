@@ -4,10 +4,10 @@ var Clean = require('clean-webpack-plugin');
 
 module.exports = {
   entry: [
-    path.resolve(__dirname, 'src/library/js/main.js')
+    path.resolve(__dirname, 'src/js/main.js')
   ],
   output: {
-      path: path.resolve(__dirname, 'build/scripts'),
+      path: path.resolve(__dirname, 'build/js'),
       filename: 'bundle.js',
   },
   module: {
@@ -30,7 +30,7 @@ module.exports = {
 
   plugins: [
     new CopyWebpackPlugin([
-        // Directory examples
+        // Directory  examples
         { from: 'src/html', to: '..' }
     ]),
     new Clean(['build'])

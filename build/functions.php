@@ -120,7 +120,7 @@ require_once('shortcodes.php');
 // Custom Backend Footer
 add_filter('admin_footer_text', 'wp_bootstrap_custom_admin_footer');
 function wp_bootstrap_custom_admin_footer() {
-	echo '<span id="footer-thankyou">Developed by <a href="http://320press.com" target="_blank">320press</a></span>. Built using <a href="http://themble.com/bones" target="_blank">Bones</a>.';
+  echo '<span id="footer-thankyou">Developed by <a href="http://320press.com" target="_blank">320press</a></span>. Built using <a href="http://themble.com/bones" target="_blank">Bones</a>.';
 }
 
 // adding it to the admin area
@@ -161,23 +161,23 @@ you like. Enjoy!
 // Sidebars & Widgetizes Areas
 function wp_bootstrap_register_sidebars() {
   register_sidebar(array(
-  	'id' => 'sidebar1',
-  	'name' => 'Main Sidebar',
-  	'description' => 'Used on every page BUT the homepage page template.',
-  	'before_widget' => '<div id="%1$s" class="widget %2$s">',
-  	'after_widget' => '</div>',
-  	'before_title' => '<h4 class="widgettitle">',
-  	'after_title' => '</h4>',
+    'id' => 'sidebar1',
+    'name' => 'Main Sidebar',
+    'description' => 'Used on every page BUT the homepage page template.',
+    'before_widget' => '<div id="%1$s" class="widget %2$s">',
+    'after_widget' => '</div>',
+    'before_title' => '<h4 class="widgettitle">',
+    'after_title' => '</h4>',
   ));
 
   register_sidebar(array(
-  	'id' => 'sidebar2',
-  	'name' => 'Homepage Sidebar',
-  	'description' => 'Used only on the homepage page template.',
-  	'before_widget' => '<div id="%1$s" class="widget %2$s">',
-  	'after_widget' => '</div>',
-  	'before_title' => '<h4 class="widgettitle">',
-  	'after_title' => '</h4>',
+    'id' => 'sidebar2',
+    'name' => 'Homepage Sidebar',
+    'description' => 'Used only on the homepage page template.',
+    'before_widget' => '<div id="%1$s" class="widget %2$s">',
+    'after_widget' => '</div>',
+    'before_title' => '<h4 class="widgettitle">',
+    'after_title' => '</h4>',
   ));
 
   register_sidebar(array(
@@ -230,30 +230,30 @@ add_action( 'widgets_init', 'wp_bootstrap_register_sidebars' );
 // Comment Layout
 function wp_bootstrap_comments($comment, $args, $depth) {
    $GLOBALS['comment'] = $comment; ?>
-	<li <?php comment_class(); ?>>
-		<article id="comment-<?php comment_ID(); ?>" class="clearfix">
-			<div class="comment-author vcard clearfix">
-				<div class="avatar col-sm-3">
-					<?php echo get_avatar( $comment, $size='75' ); ?>
-				</div>
-				<div class="col-sm-9 comment-text">
-					<?php printf('<h4>%s</h4>', get_comment_author_link()) ?>
-					<?php edit_comment_link(__('Edit','wpbootstrap'),'<span class="edit-comment btn btn-sm btn-info"><i class="glyphicon-white glyphicon-pencil"></i>','</span>') ?>
+  <li <?php comment_class(); ?>>
+    <article id="comment-<?php comment_ID(); ?>" class="clearfix">
+      <div class="comment-author vcard clearfix">
+        <div class="avatar col-sm-3">
+          <?php echo get_avatar( $comment, $size='75' ); ?>
+        </div>
+        <div class="col-sm-9 comment-text">
+          <?php printf('<h4>%s</h4>', get_comment_author_link()) ?>
+          <?php edit_comment_link(__('Edit','wpbootstrap'),'<span class="edit-comment btn btn-sm btn-info"><i class="glyphicon-white glyphicon-pencil"></i>','</span>') ?>
 
                     <?php if ($comment->comment_approved == '0') : ?>
-       					<div class="alert-message success">
-          				<p><?php _e('Your comment is awaiting moderation.','wpbootstrap') ?></p>
-          				</div>
-					<?php endif; ?>
+                 <div class="alert-message success">
+                  <p><?php _e('Your comment is awaiting moderation.','wpbootstrap') ?></p>
+                  </div>
+          <?php endif; ?>
 
                     <?php comment_text() ?>
 
                     <time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time('F jS, Y'); ?> </a></time>
 
-					<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+          <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
                 </div>
-			</div>
-		</article>
+      </div>
+    </article>
     <!-- </li> is added by wordpress automatically -->
 <?php
 } // don't remove this bracket!
@@ -274,14 +274,14 @@ function list_pings($comment, $args, $depth) {
 add_filter( 'the_password_form', 'wp_bootstrap_custom_password_form' );
 
 function wp_bootstrap_custom_password_form() {
-	global $post;
-	$label = 'pwbox-'.( empty( $post->ID ) ? rand() : $post->ID );
-	$o = '<div class="clearfix"><form class="protected-post-form" action="' . get_option('siteurl') . '/wp-login.php?action=postpass" method="post">
-	' . '<p>' . __( "This post is password protected. To view it please enter your password below:" ,'wpbootstrap') . '</p>' . '
-	<label for="' . $label . '">' . __( "Password:" ,'wpbootstrap') . ' </label><div class="input-append"><input name="post_password" id="' . $label . '" type="password" size="20" /><input type="submit" name="Submit" class="btn btn-primary" value="' . esc_attr__( "Submit",'wpbootstrap' ) . '" /></div>
-	</form></div>
-	';
-	return $o;
+  global $post;
+  $label = 'pwbox-'.( empty( $post->ID ) ? rand() : $post->ID );
+  $o = '<div class="clearfix"><form class="protected-post-form" action="' . get_option('siteurl') . '/wp-login.php?action=postpass" method="post">
+  ' . '<p>' . __( "This post is password protected. To view it please enter your password below:" ,'wpbootstrap') . '</p>' . '
+  <label for="' . $label . '">' . __( "Password:" ,'wpbootstrap') . ' </label><div class="input-append"><input name="post_password" id="' . $label . '" type="password" size="20" /><input type="submit" name="Submit" class="btn btn-primary" value="' . esc_attr__( "Submit",'wpbootstrap' ) . '" /></div>
+  </form></div>
+  ';
+  return $o;
 }
 
 /*********** update standard wp tag cloud widget so it looks better ************/
@@ -289,11 +289,11 @@ function wp_bootstrap_custom_password_form() {
 add_filter( 'widget_tag_cloud_args', 'wp_bootstrap_my_widget_tag_cloud_args' );
 
 function wp_bootstrap_my_widget_tag_cloud_args( $args ) {
-	$args['number'] = 20; // show less tags
-	$args['largest'] = 9.75; // make largest and smallest the same - i don't like the varying font-size look
-	$args['smallest'] = 9.75;
-	$args['unit'] = 'px';
-	return $args;
+  $args['number'] = 20; // show less tags
+  $args['largest'] = 9.75; // make largest and smallest the same - i don't like the varying font-size look
+  $args['smallest'] = 9.75;
+  $args['unit'] = 'px';
+  return $args;
 }
 
 // filter tag clould output so that it can be styled by CSS
@@ -302,7 +302,7 @@ function wp_bootstrap_add_tag_class( $taglinks ) {
     $regex = "#(.*tag-link[-])(.*)(' title.*)#e";
 
     foreach( $tags as $tag ) {
-    	$tagn[] = preg_replace($regex, "('$1$2 label tag-'.get_tag($2)->slug.'$3')", $tag );
+      $tagn[] = preg_replace($regex, "('$1$2 label tag-'.get_tag($2)->slug.'$3')", $tag );
     }
 
     $taglinks = implode('</a>', $tagn);
@@ -324,14 +324,14 @@ add_filter( 'widget_text', 'do_shortcode' );
 
 // Disable jump in 'read more' link
 function wp_bootstrap_remove_more_jump_link( $link ) {
-	$offset = strpos($link, '#more-');
-	if ( $offset ) {
-		$end = strpos( $link, '"',$offset );
-	}
-	if ( $end ) {
-		$link = substr_replace( $link, '', $offset, $end-$offset );
-	}
-	return $link;
+  $offset = strpos($link, '#more-');
+  if ( $offset ) {
+    $end = strpos( $link, '"',$offset );
+  }
+  if ( $end ) {
+    $link = substr_replace( $link, '', $offset, $end-$offset );
+  }
+  return $link;
 }
 add_filter( 'the_content_more_link', 'wp_bootstrap_remove_more_jump_link' );
 
@@ -346,21 +346,21 @@ function wp_bootstrap_remove_thumbnail_dimensions( $html ) {
 
 // Add the Meta Box to the homepage template
 function wp_bootstrap_add_homepage_meta_box() {
-	global $post;
+  global $post;
 
-	// Only add homepage meta box if template being used is the homepage template
-	// $post_id = isset($_GET['post']) ? $_GET['post'] : (isset($_POST['post_ID']) ? $_POST['post_ID'] : "");
-	$post_id = $post->ID;
-	$template_file = get_post_meta($post_id,'_wp_page_template',TRUE);
+  // Only add homepage meta box if template being used is the homepage template
+  // $post_id = isset($_GET['post']) ? $_GET['post'] : (isset($_POST['post_ID']) ? $_POST['post_ID'] : "");
+  $post_id = $post->ID;
+  $template_file = get_post_meta($post_id,'_wp_page_template',TRUE);
 
-	if ( $template_file == 'page-homepage.php' ){
-	    add_meta_box(
-	        'homepage_meta_box', // $id
-	        'Optional Homepage Tagline', // $title
-	        'wp_bootstrap_show_homepage_meta_box', // $callback
-	        'page', // $page
-	        'normal', // $context
-	        'high'); // $priority
+  if ( $template_file == 'page-homepage.php' ){
+      add_meta_box(
+          'homepage_meta_box', // $id
+          'Optional Homepage Tagline', // $title
+          'wp_bootstrap_show_homepage_meta_box', // $callback
+          'page', // $page
+          'normal', // $context
+          'high'); // $priority
     }
 }
 
@@ -472,31 +472,31 @@ class Bootstrap_walker extends Walker_Nav_Menu{
 
   function start_el(&$output, $object, $depth = 0, $args = Array(), $current_object_id = 0){
 
-	 global $wp_query;
-	 $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
+   global $wp_query;
+   $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 
-	 $class_names = $value = '';
+   $class_names = $value = '';
 
-		// If the item has children, add the dropdown class for bootstrap
-		if ( $args->has_children ) {
-			$class_names = "dropdown ";
-		}
+    // If the item has children, add the dropdown class for bootstrap
+    if ( $args->has_children ) {
+      $class_names = "dropdown ";
+    }
 
-		$classes = empty( $object->classes ) ? array() : (array) $object->classes;
+    $classes = empty( $object->classes ) ? array() : (array) $object->classes;
 
-		$class_names .= join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $object ) );
-		$class_names = ' class="'. esc_attr( $class_names ) . '"';
+    $class_names .= join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $object ) );
+    $class_names = ' class="'. esc_attr( $class_names ) . '"';
 
-   	$output .= $indent . '<li id="menu-item-'. $object->ID . '"' . $value . $class_names .'>';
+     $output .= $indent . '<li id="menu-item-'. $object->ID . '"' . $value . $class_names .'>';
 
-   	$attributes  = ! empty( $object->attr_title ) ? ' title="'  . esc_attr( $object->attr_title ) .'"' : '';
-   	$attributes .= ! empty( $object->target )     ? ' target="' . esc_attr( $object->target     ) .'"' : '';
-   	$attributes .= ! empty( $object->xfn )        ? ' rel="'    . esc_attr( $object->xfn        ) .'"' : '';
-   	$attributes .= ! empty( $object->url )        ? ' href="'   . esc_attr( $object->url        ) .'"' : '';
+     $attributes  = ! empty( $object->attr_title ) ? ' title="'  . esc_attr( $object->attr_title ) .'"' : '';
+     $attributes .= ! empty( $object->target )     ? ' target="' . esc_attr( $object->target     ) .'"' : '';
+     $attributes .= ! empty( $object->xfn )        ? ' rel="'    . esc_attr( $object->xfn        ) .'"' : '';
+     $attributes .= ! empty( $object->url )        ? ' href="'   . esc_attr( $object->url        ) .'"' : '';
 
-   	// if the item has children add these two attributes to the anchor tag
-   	if ( $args->has_children ) {
-		  $attributes .= ' class="dropdown-toggle" data-toggle="dropdown"';
+     // if the item has children add these two attributes to the anchor tag
+     if ( $args->has_children ) {
+      $attributes .= ' class="dropdown-toggle" data-toggle="dropdown"';
     }
 
     $item_output = $args->before;
@@ -506,10 +506,10 @@ class Bootstrap_walker extends Walker_Nav_Menu{
 
     // if the item has children add the caret just before closing the anchor tag
     if ( $args->has_children ) {
-    	$item_output .= '<b class="caret"></b></a>';
+      $item_output .= '<b class="caret"></b></a>';
     }
     else {
-    	$item_output .= '</a>';
+      $item_output .= '</a>';
     }
 
     $item_output .= $args->after;
@@ -522,7 +522,7 @@ class Bootstrap_walker extends Walker_Nav_Menu{
     $output .= "\n$indent<ul class=\"dropdown-menu\">\n";
   }
 
-	function display_element( $element, &$children_elements, $max_depth, $depth=0, $args, &$output ){
+  function display_element( $element, &$children_elements, $max_depth, $depth=0, $args, &$output ){
     $id_field = $this->db_fields['id'];
     if ( is_object( $args[0] ) ) {
         $args[0]->has_children = ! empty( $children_elements[$element->$id_field] );
@@ -534,9 +534,9 @@ class Bootstrap_walker extends Walker_Nav_Menu{
 add_editor_style('editor-style.css');
 
 function wp_bootstrap_add_active_class($classes, $item) {
-	if( $item->menu_item_parent == 0 && in_array('current-menu-item', $classes) ) {
+  if( $item->menu_item_parent == 0 && in_array('current-menu-item', $classes) ) {
     $classes[] = "active";
-	}
+  }
 
   return $classes;
 }
@@ -565,7 +565,7 @@ if( !function_exists( "wp_bootstrap_theme_js" ) ) {
 
 
     wp_register_script( 'wpbs-js',
-      get_template_directory_uri() . '/scripts/bundle.js',
+      get_template_directory_uri() . '/js/bundle.js',
       array(),
       '1.2' );
 
