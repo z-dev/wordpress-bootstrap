@@ -20,3 +20,8 @@ Open a new terminal you can:
 * `scripts/buildTheme.sh` build the theme to `build` folder
 * `scripts/attachToWordpress.sh` Attach to docker container.
 * `scripts/resetDockerMachine.sh` Reset docker-machine virtual machine so you can start again.
+
+
+### Activating the Theme
+
+Go to admin pages -> Appearance -> Themes -> wp-boostrap -> activate
