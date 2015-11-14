@@ -1,17 +1,22 @@
-# (Sass) WordPress Bootstrap
+# WordPress Bootstrap Template
 
-Stuff you need to start a WordPress project with Bootstrap and Sass.
+A simple (modern) wordpress theme. Built with webpack and the latest bootstrap.
 
-[Bootstrap](http://twitter.github.com/bootstrap) in Wordpress theme by [WordPress Bootstrap](https://github.com/320press/wordpress-bootstrap) which is based on [Bones](https://github.com/eddiemachado/bones) with the awesome addition of [sass-twitter-bootstrap](https://github.com/jlong/sass-twitter-bootstrap).
+## Running
 
-## Discrepancies from [WordPress Bootstrap](https://github.com/320press/wordpress-bootstrap)
+###Prerequisites
 
-* All `.DS_Store` files have been deleted and git ignored.
-* `style.css` is no longer called in the `functions.php` (look below).
-* LESS has been replaced by Sass...
+* Docker, docker-compose, docker-machine - Install [Docker Toolbox](https://www.docker.com/toolbox)
+* Node 4 or greater
 
-## Discrepancies from [Sass Twitter Bootstrap](https://github.com/jlong/sass-twitter-bootstrap)
+###Run
 
-* Organized `.scss` files in a `partials` folder.
-* New file added named `_wp.scss` with stuff from `style.css` (with exception to the theme information).
-* Added a [`_shame.scss`](http://csswizardry.com/2013/04/shame-css/).
+`scripts/runWordpress.sh` This will build the theme and launch a wordpress and sql database. It will mount the built theme into wordpress. You can then select the theme in wordpress.
+
+Open a new terminal you can:
+
+* `scripts/openInBrowser.sh` open wordpress page:
+* `scripts/watchBuildTheme.sh` Watch for changes and rebuild the theme to `build` folder
+* `scripts/buildTheme.sh` build the theme to `build` folder
+* `scripts/attachToWordpress.sh` Attach to docker container.
+* `scripts/resetDockerMachine.sh` Reset docker-machine virtual machine so you can start again.

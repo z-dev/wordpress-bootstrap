@@ -57,9 +57,9 @@
 	__webpack_require__(2);
 
 	// Import bootstrap (which requires jQuery)
-	__webpack_require__(11);
+	__webpack_require__(5);
 
-	__webpack_require__(13);
+	__webpack_require__(7);
 
 /***/ },
 /* 2 */
@@ -71,7 +71,7 @@
 	var content = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./main.scss\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(10)(content, {});
+	var update = __webpack_require__(4)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -89,13 +89,7 @@
 
 /***/ },
 /* 3 */,
-/* 4 */,
-/* 5 */,
-/* 6 */,
-/* 7 */,
-/* 8 */,
-/* 9 */,
-/* 10 */
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -349,11 +343,11 @@
 
 
 /***/ },
-/* 11 */
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*** IMPORTS FROM imports-loader ***/
-	var jQuery = __webpack_require__(12);
+	var jQuery = __webpack_require__(6);
 
 	/*!
 	 * Bootstrap v3.3.5 (http://getbootstrap.com)
@@ -2722,7 +2716,7 @@
 
 
 /***/ },
-/* 12 */
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -11938,12 +11932,12 @@
 
 
 /***/ },
-/* 13 */
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
-	var jQuery = __webpack_require__(12);
+	var jQuery = __webpack_require__(6);
 
 	/* imgsizer (flexible images for fluid sites) */
 	var imgSizer = { Config: { imgCache: [], spacer: "/path/to/your/spacer.gif" }, collate: function collate(aScope) {
