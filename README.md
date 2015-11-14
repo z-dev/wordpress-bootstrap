@@ -1,4 +1,4 @@
-# WordPress Bootstrap Template
+# WordPress Bootstrap Template [![Circle CI](https://circleci.com/gh/z-dev/wordpress-bootstrap.svg?style=svg)](https://circleci.com/gh/z-dev/wordpress-bootstrap)
 
 A simple (modern) wordpress theme. Built with webpack and the latest bootstrap.
 
